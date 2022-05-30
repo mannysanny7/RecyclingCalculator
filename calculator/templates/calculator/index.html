@@ -1,9 +1,273 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>Recycling Calculator</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>ReCircle - Recycling Calculator</title>
+
+	<link rel="icon" href="/static/website_static_data/images/favicon.ico" type="image/icon type">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="/static/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="/static/website_static_data/css/style.css">
+
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+	<script type="text/javascript" src="/jquery/jquery-3.6.0.min.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+            $('#showPackageBtn').click(function(){
+            	$('#packageModel').show();
+            });
+         });
+      </script>
+
+
+<!-- Bootstrap CSS -->
+    <link href=
+"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity=
+"sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+        crossorigin="anonymous">
+  <!-- Bootstrap JS -->
+    <script src=
+"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity=
+"sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous">
+    </script>
+	<!-- <script src="/static/website_static_data/js/mystyle.js" type="text/javascript"></script> -->
 </head>
 <body>
-<p>Enter amount (kg):</p>
-</body>
-</html>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bd-example shadow-sm">
+			<div class="container-fluid">
+				<a href="/"><img src="/static/website_static_data/images/jpg/logo.jpg" class="img-fluid" alt=""></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav m-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="https://recircle.in/web_about/">About</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Services
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="https://recircle.in/web_service_pickup/">Pickup</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="https://recircle.in/web_service_dropoff/">Drop-off</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="https://recircle.in/web_extended_producer_responsibility/">Extended
+								Producer Responsibility</a><a>
+									<div class="dropdown-divider"></div>
+								</a><a class="dropdown-item" href="https://recircle.in/web_plastic_neutral_program/">Plastic
+								Neutral Program</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="https://recircle.in/web_material_recovery_facility/">Material Recovery
+								Facility</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="https://recircle.in/our_projects/">Our Projects</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Partners
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="https://recircle.in/web_ngo/">NGO Partners</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="https://recircle.in/web_partners_impact/">Impact Partners</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://recircle.in/web_impact/">Impact</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://recircle.in/web_faq/">Contact Us</a>
+						</li>
+
+					</ul>
+
+					<button class="btn btn-light-grey signin mr-2" type="button" data-toggle="modal" data-target="#demo-1">Log In</button>
+					<button class="btn btn-primary signup" type="button" data-toggle="modal" data-target="#demo-2">Sign Up</button>
+
+				</div>
+			</div>
+		</nav>
+	</header>
+	<section class="container pt-5 p-5">
+		<div class="col-12">
+			<div style="black solid; text-align: center;">
+				<h2 style="color: blue;">Food and Drinks</h2>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-light pb-5">
+		<div class="container pt-5 pb-5">
+		</div>
+	</section>
+	<section class="container pt-5 p-5">
+		<div name="plasticFootprintFacts" style="border: red dashed;">
+			<h3>Your plastic footprint</h3>
+			<h3>25 Kg Plastic saved</h3>
+			<h3>25 Rs Total Funds Donated</h3>
+		</div>
+
+ <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" 
+        data-bs-toggle="modal" 
+        data-bs-target="#packageModal"
+        style="margin: 2em;">
+        Show Form!
+    </button>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="packageModal" 
+        tabindex="-1" aria-labelledby="packageModalLabel" 
+        aria-hidden="true">
+          
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" 
+                        id="packageModalLabel">
+                        Plastic Packaging
+                    </h5>
+                    <button type="button" class="btn-close" 
+                        data-bs-dismiss="modal" 
+                        aria-label="Close">
+                    </button>
+                </div>
+  
+                <div class="modal-body">
+                    <form>
+			  <label for="packName">Enter Plastic Packaging:</label><br>
+			  <input type="text" id="packName" name="packName" placeholder="Plastic Packaging Name"><br>
+			  <label for="packName">Package Dimensions</label><br>
+			  <input type="text" id="packDimensions" name="packDimensions" placeholder="Dimensions"><br>
+			  <label>Upload Image</label>
+			  <img src="{% static 'images/camera_icon.jpg' %}" class="rounded float-left" alt="upload icon">
+			</form> 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" 
+                        class="btn btn-secondary" 
+                        data-bs-dismiss="modal">
+                        Close
+                    </button>
+  
+                    <button type="button" 
+                        class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+	</section>
+			<footer class="footer-bg">
+				<div class="container pb-0 mb-0 justify-content-center text-light">
+					<div class="footer-logo text-center">
+						<img src="/static/website_static_data/images/jpg/footer-logo.png" class="img-fluid" alt="">
+					</div>
+					<div class="row justify-content-center pt-3 pb-5">
+						<div class="col-12">
+							<div class="row">
+								<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 mb-3">
+									<p class="footer-p">
+										ReCircle is a resource recovery enterprise working towards a sustainable future by means
+										of preventing all resources from getting wasted into landfills and oceans, 
+										bringing it back into the economy by recycling, reusing or repurposing.
+									</p>
+									<img src="/static/website_static_data/images/jpg/footer.png" class="img-fluid" alt="">
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 mb-3">
+									<ul class="list-unstyled"> 
+										<li class="footer-list"><a href="/web_events/">Events</a></li>
+										<!-- <li class="footer-list"><a href="">Resources</a></li> -->
+										<li class="footer-list"><a href="/web_rate_card/">Rate Card</a></li>
+										<li class="footer-list"><a href="/web_faq/">Contact Us</a></li>
+										<li class="footer-list"><a href="/privacy_policy/" target="_blank">Privacy Policy</a></li>
+										<!-- <li class="footer-list"><a href="">Terms and Conditions</a></li> -->
+									</ul>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 mb-3">
+									<h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0"><b></b>Contact us</h6>
+
+									<ul class="list-unstyled">
+										<li onclick="window.open('tel:9004240004');" style="cursor: pointer;">
+											<i class="fas fa-phone pr-2"></i> +91 90042 40004</li>
+											<li><a href="mailto:info@recircle.in?">
+												<i class="fas fa-envelope pr-2"></i> info@recircle.in</a>
+											</li>
+											<li class="lh-15"><a class="address" href="https://goo.gl/maps/v1WsFqhepeaTZ4yR9" target="_blank">
+											</a></li><li class="lh-15"><a class="address" href="https://goo.gl/maps/v1WsFqhepeaTZ4yR9" target="_blank"><i class="fas fa-home pr-2"></i> A-03, JUHU RITURAJ CHS, JUHU TARA ROAD, 
+												SANTACRUZ WEST MUMBAI 400049.
+											</a>
+										</li>
+										<!-- <li class="lh-15"><i class="fas fa-home pr-2"></i> A-03, JUHU RITURAJ CHS, JUHU TARA ROAD,  -->
+											<!-- SANTACRUZ WEST MUMBAI 400049. -->
+											<!-- </li> -->
+										</ul>
+
+										<div class="row pt-4">
+											<ul class="social-network">
+
+												<li><a href="http://www.instagram.com/RECIRCLE.IN" target="_blank"><i class="fab fa-instagram"></i></a></li>
+												<li><a href="https://www.facebook.com/ReCircle.in/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+												<li><a href="http://www.twitter.com/RECIRCLE.IN" target="_blank"><i class="fab fa-twitter"></i></a></li>
+												<li><a href="http://www.linked.com/RECIRCLE.IN" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-12">
+										<p class="footer-p text-center mb-0">
+											ReCircle was formerly known as RaddiConnect.<br>
+											ReCircle is a brand of Swacchh Sustainable Solutions Pvt. Ltd.
+										</p>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="container-fluid">
+						<div class="row bg-white pt-4 pb-4">
+							<div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-12">
+								<p style="text-align: center;">Copyright ©ReCircle 2021. All rights reserved</p>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</body>
+			</html>
