@@ -30,7 +30,7 @@
                 "sha256:dec2a116787b8e14962014bf78e120bba454135108e1af9e9b91ade7b2964c40"
             ],
             "index": "pypi",
-            "version": "==3.2.20"
+            "version": ">=3.2.23"
         },
         "pytz": {
             "hashes": [
